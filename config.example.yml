@@ -1,0 +1,23 @@
+debug: true # More log spam!
+
+# Repost/unedit message in Discord feed when something is reapproved.
+restore_reapproved: true 
+
+# Instead of deleting Discord feed messages on Reddit post removal, 
+# edit it to be a hash that can be unedited on reapproval.
+edit_removed: true 
+
+# Append pepper to the hash of the Reddit post ID to further hide edited posts. 
+# We could just edit the message to be empty, but then we'd need to store 
+# which message IDs that correspond to which removed posts.
+edit_pepper: "XLvQqZKq2X6AzN8gedf9Zfcc8zNOGfRpjRw8tPZlMBBY" 
+
+# Subreddit or multireddit that's being monitored for new posts and mod actions. 
+# Bot must be a moderator, but no permissions is enough to see the moderation log.
+reddit_feed: "pitchforkassistant" 
+
+discord_channel: 1086838161826656276 # Channel for the reddit posts.
+discord_forums: true # Use Discord's forums feature
+discord_title: "/u/{username} in /r/{subreddit}: {title}" # Supports {title}, {username}, {post_id}, {subreddit}, {url}. Clips at 100 chars.
+discord_message: "{url}" # Supports {title}, {username}, {post_id}, {subreddit}, {url}, {body}. Clips at 2000 chars.
+discord_removed_title: "[removed]" # Just because the title can't be empty, body/message will always be just the hash.
